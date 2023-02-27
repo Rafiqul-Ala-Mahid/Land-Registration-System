@@ -25,6 +25,7 @@ const SellerDashboard = () => {
     {/* <div className='button'>
         <Buttons/>
     </div> */}
+    
     </div>
   )
 }
