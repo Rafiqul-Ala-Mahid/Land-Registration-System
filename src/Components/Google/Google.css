@@ -1,0 +1,13 @@
+.google-btn{
+    display: flex;
+    padding: 1%;
+    margin-top: 2%;
+    margin:2% 22%;
+    border-radius: 0%;
+    border: 1px solid black;
+}
+
+#icon{
+    font-size: 1.4rem;
+    width: 12%;
+}

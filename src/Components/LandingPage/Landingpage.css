@@ -1,0 +1,55 @@
+.landing{
+    display: flex;
+    margin-top: 4%;
+
+}
+.land{
+    margin-top: 10%;
+    width: 50%;
+    margin-right: 20%;
+    font-size: 2.5rem;
+}
+
+.land h1{
+    margin-right: 30%;
+    font-weight: 800;
+}
+
+.link-btn{
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: bolder;
+    padding:2%;
+    margin-right: 2%;
+    border-radius: 10px;
+    background-color: brown;
+
+}
+#seller{
+    background-color: green;
+}
+.link-btn:hover{
+    color: rgb(219, 223, 228);
+}
+
+#btn-2{
+    background-color: green;
+}
+
+.gif-img{
+    width: 100%;
+    margin-right: 20%;
+    margin-top: 0%;
+    border-radius: 5%;
+}
+.p1{
+    font-size: 1.5rem;
+    margin-left: 17.8%;
+    margin-top: 1%;
+    color: rgba(11, 11, 208, 0.894);
+}
+.p2{
+    font-size: 1.6rem;
+    margin-right: 50%;
+    color: rgba(152, 66, 4, 0.918);
+}
