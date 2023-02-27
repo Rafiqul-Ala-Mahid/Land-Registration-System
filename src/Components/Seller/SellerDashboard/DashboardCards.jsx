@@ -12,7 +12,7 @@ const Card = ({ icon, title, value }) => {
         <h2>{title}</h2>
         <p>{value}</p>
       </div>
-      
+      <button className='btn'>Button</button>
     </div>
   );
 };
