@@ -64,7 +64,9 @@ const SellerRegistry = () => {
               Terms & Conditions
             </label>
           </div>
-          <button className="btn">SignUp</button>
+          <Link to='/home/sellerDashboard'>
+            <button className="btn">SignUp</button>
+          </Link>
         </form>
         <p>
           Already have an account? <Link to="/home/signin">Log In</Link>
