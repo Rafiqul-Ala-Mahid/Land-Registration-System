@@ -1,36 +1,32 @@
-.seller-sidebar {
-    background-color: #008cdd;
+.buyer-sidebar {
+    width: 80%;
+    background-color: #0093E9;
     background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     overflow: auto;
-    position: fixed;
-    height: 100%;
-    width: 20%;
   }
   
-  .seller-list {
+  .buyer-sidebar ul {
     margin: 5%;
     padding: 0;
   }
   
-  .seller-sidebar-link {
+  .buyer-sidebar-link {
     display: block;
-    color: rgb(255, 255, 255);
+    color: white;
     padding: 16px;
     text-decoration: none;
   }
   
-  .seller-sidebar-link:hover {
+  .buyer-sidebar-link:hover {
     background-color: #ddd;
-    width: auto;
     color: black;
   }
   
-  .seller-side{
+  .buyer-side{
     display: flex;
     align-items: center;
-    margin-left: 5%;
   }
 
-  .seller-sidebar-icon{
+  .buyer-sidebar-icon{
     margin-right: 5%;
   }

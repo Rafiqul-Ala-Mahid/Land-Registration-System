@@ -54,22 +54,12 @@ const SellerRegistry = () => {
               required
             />
           </div>
-          <div className="terms">
-            <label>
-              <input
-                type="checkbox"
-                defaultChecked={checked}
-                onChange={() => setChecked(!checked)}
-              />
-              Terms & Conditions
-            </label>
-          </div>
           <Link to='/home/sellerDashboard'>
             <button className="btn">SignUp</button>
           </Link>
         </form>
         <p>
-          Already have an account? <Link to="/home/signin">Log In</Link>
+          Already have an account?
         </p>
         <Google></Google>
       </div>

@@ -69,22 +69,12 @@ const Signup = () => {
             </div>
 
             <input id="file" type="file" required />
-            <div className="terms">
-              <label>
-                <input
-                  type="checkbox"
-                  defaultChecked={checked}
-                  onChange={() => setChecked(!checked)}
-                />
-                Terms & Conditions
-              </label>
-            </div>
             <button className="btn">
-                <Link to="/home/dashboard">SignUp</Link>
+                <Link to="/home/buyerDashboard">SignUp</Link>
             </button>
           </form>
           <p>
-            Already have an account? <Link className='connect' to="/home/signin">Log In</Link>
+            Already have an account? 
           </p>
           <Google></Google>
         </div>
