@@ -7,14 +7,12 @@ const BuyerDashboard = () => {
   return (
     <div>
     <div>
-        <nav className='navbar'>Buyer Dashboard</nav>
+        <nav className='buyer-navbar'>Buyer Dashboard</nav>
     </div>
-    <div>
-        <div className='buyer-sidebar'>
+    <div className='buyers'>
+        <div className='buyers-sidebar'>
         <Sidebar/>
         </div>
-    </div>
-        <div>
         <div className='buyer-cards'>
         <DashboardCards/>
         </div>

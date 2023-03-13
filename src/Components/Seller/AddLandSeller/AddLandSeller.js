@@ -7,14 +7,15 @@ import "./AddLandSeller.css";
 
 const AddLandSeller = () => {
   const navigate = useNavigate();
+  const { createSellerLandInfo } = useContext(NewContext);
   const { result, setResult } = useContext(NewContext);
-  const [users, setUsers] = useState([]);
   const [object, setObject] = useState();
   const handleSubmit = (event) => {
     event.preventDefault();
     event.target.reset();
     const newData = [...result, object];
     setResult(newData);
+    createSellerLandInfo(object);
     navigate("/home/sellerDashboard");
   };
   const handleBlur = (event) => {
@@ -24,14 +25,15 @@ const AddLandSeller = () => {
     newUser[field] = value;
     setObject(newUser);
   };
-  console.log(result);
   return (
-    <div className="seller-form">
-      <form onSubmit={handleSubmit}>
+    <div>
+      <h1 id="seller-land-title">Land Information</h1>
+      <div className="seller-form">
+      <form onSubmit={handleSubmit} >
         <label htmlFor="serial">Serial No.</label>
         <input onBlur={handleBlur} type="number" name="serial" required />
         <br></br>
-        <label htmlFor="city">City</label>
+        <label htmlFor="city">City Name</label>
         <input onBlur={handleBlur} type="text" name="city" required />
         <br></br>
         <label htmlFor="area">Area(in sqm.)</label>
@@ -46,6 +48,7 @@ const AddLandSeller = () => {
         <button>Add Land</button>
         <br></br>
         </form>
+      </div>
     </div>
   );
 };

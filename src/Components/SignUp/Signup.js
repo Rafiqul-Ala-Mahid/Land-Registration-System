@@ -1,22 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext,useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import './Signup.css';
-import Google from '../Google/Google';
+import { NewContext } from "../context/Context.jsx";
 
 const Signup = () => {
-    const [checked, setChecked] = React.useState(false);
+  const { createBuyers } = useContext(NewContext);
+  const navigate = useNavigate();
+  const [object, setObject] = useState();
+  const buyerSubmit = async(event) => {
+    event.preventDefault();
+    event.target.reset();
+    const res = await createBuyers(object);
+    if (res.hash) {
+      navigate("/home/buyerDashboard");
+    } else {
+      alert("Something going wrong.")
+    }
+    
+  }
+  
+  const handleBlur = (event) => {
+    const value = event.target.value;
+    const field = event.target.name;
+    const newUser = { ...object };
+    newUser[field] = value;
+    setObject(newUser);
+  };
+
+
     return (
-      <div className='buyer-reg'>
+      <div className="buyer-reg">
         <div className="register-form">
-          <form>
+          <form onSubmit={buyerSubmit}>
             <h2 className="tag">Buyer Registration</h2>
             <div className="input-container">
               <label className="labeling">Fullname </label>
               <input
+                onBlur={handleBlur}
                 className="input"
                 placeholder="enter username"
                 type="text"
-                name="uname"
+                name="name"
                 required
               />
             </div>
@@ -25,58 +49,43 @@ const Signup = () => {
                 Email
               </label>
               <input
+                onBlur={handleBlur}
                 className="input"
                 placeholder="enter your email address"
                 type="text"
-                name="uname"
+                name="email"
                 required
               />
             </div>
-            <div className="input-container">
-              <label className="labeling">Password </label>
+            {/* <div className="input-container">
+              <label className="labeling">Enter Age</label>
               <input
+                onBlur={handleBlur}
                 className="input"
-                placeholder="enter a password"
-                type="password"
-                name="pass"
+                placeholder="enter your age"
+                type="number"
+                name="age"
                 required
               />
-            </div>
-            <div className="input-container">
-              <label id="confirm" className="labeling">
-                Confirm Password
-              </label>
-              <input
-                className="input"
-                placeholder="enter a password again"
-                type="password"
-                name="pass"
-                required
-              />
-            </div>
+            </div> */}
 
             <div className="input-container">
               <label id="confirm" className="labeling">
                 Enter NID number
               </label>
               <input
+                onBlur={handleBlur}
                 className="input"
                 placeholder="enter your nid number"
-                type="number"
-                name="number"
+                type="text"
+                name="nid"
                 required
               />
             </div>
-
-            <input id="file" type="file" required />
-            <button className="btn">
-                <Link to="/home/buyerDashboard">SignUp</Link>
-            </button>
+            {/* <Link to="/home/buyerDashboard"> */}
+            <button className="btn">SignUp</button>
+            {/* </Link> */}
           </form>
-          <p>
-            Already have an account? 
-          </p>
-          <Google></Google>
         </div>
       </div>
     );

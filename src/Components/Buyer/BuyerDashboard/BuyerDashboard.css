@@ -1,23 +1,27 @@
-.navbar{
-    background-color: rgb(164, 117, 208);
-    color: white;
+.buyer-navbar{
+    background-color: blueviolet;
+    color: rgb(253, 253, 253);
     height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
     font-weight: bold;
+    margin-bottom: 0;
+}
+.buyers-sidebar{
+    width: 20%;
 }
 
-.buyer-cards{
-    width: 100%;
-    height: 200px;
+.buyers{
     display: flex;
-    margin-top: 2rem;
-    padding-right: 4rem;
-    justify-content: flex-end;
-    
-    align-content: space-between;
-    align-items: space-between;
-
+    margin-top: 0%;
+}
+.buyer-cards{
+    width: 70%;
+    height: auto;
+    display: flex;
+    margin-top: 2%;
+    margin-right: 5%;
+    margin-left: 5%;
 }

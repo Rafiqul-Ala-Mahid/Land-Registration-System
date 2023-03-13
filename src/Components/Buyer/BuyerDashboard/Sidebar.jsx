@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <div className="buyer-sidebar">
-      <ul>
+      <div className='buyer-list'>
         <Link className="buyer-sidebar-link">
           <div className="buyer-side">
             <FaUserAlt className="buyer-sidebar-icon" />
@@ -16,7 +16,7 @@ const Sidebar = () => {
         <Link className="buyer-sidebar-link">
           <div className="buyer-side">
             <FaLandmark className="buyer-sidebar-icon" />
-            <span>Add Lands</span>
+            <span>Buy Lands</span>
           </div>
         </Link>
         <Link className="buyer-sidebar-link">
@@ -31,7 +31,7 @@ const Sidebar = () => {
             <span>Land Gallery</span>
           </div>
         </Link>
-      </ul>
+      </div>
     </div>
   );
 };

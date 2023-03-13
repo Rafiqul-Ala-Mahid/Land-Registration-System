@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <div className="seller-sidebar">
-      <div className='seller-list'>
+      <div className="seller-list">
         <Link className="seller-sidebar-link">
           <div className="seller-side">
             <FaUserAlt className="seller-sidebar-icon" />
             <span>Sellers Profile</span>
           </div>
         </Link>
-        <Link className="seller-sidebar-link">
+        <Link to="/home/addLandSeller" className="seller-sidebar-link">
           <div className="seller-side">
             <FaLandmark className="seller-sidebar-icon" />
             <span>Add Lands</span>

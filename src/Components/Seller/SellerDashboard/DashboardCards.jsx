@@ -6,74 +6,69 @@ import { NewContext } from '../../context/Context';
 
 const Card = ({ icon, title, value }) => {
   return (
-    <div className="card">
-      <div className="icon">
-        {icon}
-      </div>
-      <div className="content">
+    <div className="seller-card">
+      <div className="seller-icon">{icon}</div>
+      <div className="seller-content">
         <h2>{title}</h2>
         <p>{value}</p>
       </div>
-      
     </div>
   );
 };
 
 
 const Dashboard = () => {
-  const { result } = useContext(NewContext);
-  console.log(result)
+  const { lands,buyers } = useContext(NewContext);
   return (
     <div>
-      <div className="dashboard">
-        <Card icon={<FaUsers />} title="Total Buyers" value="500" />
-
+      <div className="seller-dashboard">
+        <Card icon={<FaUsers />} title="Total Buyers" value={buyers.length} />
         <Card
           icon={<FaLandmark />}
           title="Registered Land Counts"
-          value="200"
+          value={lands.length}
         />
 
-        <Card icon={<FaClipboardList />} title="Land Requests" value="50" />
+        <Card icon={<FaClipboardList />} title="Sold Lands" value="0" />
       </div>
-      <div className="dashboard">
-        <div className="dashboard-link">
+      <div className="seller-dashboard">
+        <div className="seller-dashboard-link">
           <h1>Wish to Add Land!</h1>
           <Link to="/home/addLandSeller">Add Land</Link>
         </div>
-        <div className="dashboard-link">
+        <div className="seller-dashboard-link">
           <h1>Profile</h1>
           <Link to="">View Profile</Link>
         </div>
-        <div className="dashboard-link">
+        <div className="seller-dashboard-link">
           <h1>Land Request</h1>
           <Link to="">View Land Requests</Link>
         </div>
       </div>
       <div className="seller-land-info">
-        <h1 className="info-tag">Lands Info:</h1>
-        <div className="info">
-          <h1>#</h1>
-          <h1>City</h1>
-          <h1>Area(in sqm.)</h1>
-          <h1>Price(BDT)</h1>
+        <h1 className="seller-info-tag">Lands Info:</h1>
+        <div className="seller-info">
+          <h1>#-Serial Id</h1>
+          <h1>City Name</h1>
+          <h1>Area-(in sqm.)</h1>
+          <h1>Price-(BDT)</h1>
           <h1>Property ID</h1>
         </div>
-        <div className='dynamic'>
-          {result.map((res,index)=> (
-            <div className='info'>
-              <h1>{res.serial}</h1>
-              <h1>{res.city}</h1>
-              <h1>{res.area}</h1>
-              <h1>{res.price}</h1>
-              <h1>{res.property}</h1>
+        <div className="seller-dynamic">
+          {lands.map((land, index) => (
+            <div className="seller-info">
+              <h1>{index + 1}</h1>
+              <h1>{land.city}</h1>
+              <h1>{parseInt(land.area._hex)}</h1>
+              <h1>{parseInt(land.price._hex)}</h1>
+              <h1>{parseInt(land.property._hex)}</h1>
             </div>
           ))}
         </div>
       </div>
     </div>
   );
-  
+
 };
 
 
