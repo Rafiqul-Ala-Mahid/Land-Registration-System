@@ -1,22 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { NewContext } from "../context/Context";
 import "../SignUp/Signup.css";
-import Google from "../Google/Google";
 
 const SellerRegistry = () => {
-  const [checked, setChecked] = React.useState(false);
+  const { createSellers } = useContext(NewContext);
+  const navigate = useNavigate();
+  const [sellers, setSeller] = useState();
+  const sellerSubmit = async (event) => {
+    event.preventDefault();
+    event.target.reset();
+    const res = await createSellers(sellers);
+    if (res.hash) {
+      navigate("/home/sellerDashboard");
+    } else {
+      alert("Something is wrong..");
+    }
+  };
+
+  const handleSellerBlur = (event) => {
+    const value = event.target.value;
+    const field = event.target.name;
+    const newUser = { ...sellers };
+    newUser[field] = value;
+    setSeller(newUser);
+  };
   return (
     <div>
       <div className="register-form">
-        <form>
+        <form onSubmit={sellerSubmit}>
           <h2 className="tag">Seller Registration</h2>
           <div className="input-container">
             <label className="labeling">Fullname </label>
             <input
+              onBlur={handleSellerBlur}
               className="input"
               placeholder="enter username"
               type="text"
-              name="uname"
+              name="name"
               required
             />
           </div>
@@ -25,51 +46,41 @@ const SellerRegistry = () => {
               Email
             </label>
             <input
+              onBlur={handleSellerBlur}
               className="input"
               placeholder="enter your email address"
               type="text"
-              name="uname"
+              name="email"
               required
             />
           </div>
-          <div className="input-container">
-            <label className="labeling">Password </label>
+          {/* <div className="input-container">
+            <label className="labeling">Enter Age </label>
             <input
               className="input"
-              placeholder="enter a password"
-              type="password"
-              name="pass"
+              placeholder="enter your age"
+              type="number"
+              name="age"
               required
             />
-          </div>
+          </div> */}
           <div className="input-container">
             <label id="confirm" className="labeling">
-              Confirm Password
+              Enter NID number
             </label>
             <input
+              onBlur={handleSellerBlur}
               className="input"
-              placeholder="enter a password again"
-              type="password"
-              name="pass"
+              placeholder="enter your nid number"
+              type="text"
+              name="nid"
               required
             />
           </div>
-          <div className="terms">
-            <label>
-              <input
-                type="checkbox"
-                defaultChecked={checked}
-                onChange={() => setChecked(!checked)}
-              />
-              Terms & Conditions
-            </label>
-          </div>
+          {/* <Link to='/home/sellerDashboard'> */}
           <button className="btn">SignUp</button>
+          {/* </Link> */}
         </form>
-        <p>
-          Already have an account? <Link to="/home/signin">Log In</Link>
-        </p>
-        <Google></Google>
       </div>
     </div>
   );

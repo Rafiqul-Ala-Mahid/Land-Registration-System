@@ -1,0 +1,23 @@
+#seller-land-title{
+    margin: 2% 0%;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.seller-form{
+    display: flex;
+    margin: 2% 40%;
+    padding: 1% 2%;
+    background-color: rgb(235, 215, 250);
+    border: 1px solid gray;
+}
+.seller-form input,label{
+  margin:2% 4%;
+}
+
+.seller-form button{
+    padding: 3%;
+    margin-top: 2%;
+    background-color: rgb(107, 85, 218);
+    color: white;
+}

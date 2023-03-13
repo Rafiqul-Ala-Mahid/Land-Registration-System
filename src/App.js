@@ -2,12 +2,13 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Main from './Components/Main/Main'
 import Home from './Components/Home/Home'
-import Signin from './Components/SignIn/Signin'
 import Signup from './Components/SignUp/Signup'
 import Landingpage from './Components/LandingPage/Landingpage'
 import SellerRegistry from './Components/Seller/SellerRegistry'
-import BuyerDashboard from './Components/BuyerDashboard/BuyerDashboard'
 import SellerDashboard from './Components/Seller/SellerDashboard/SellerDashboard'
+import BuyerDashboard from "./Components/Buyer/BuyerDashboard/BuyerDashboard";
+import AddLandSeller from './Components/Seller/AddLandSeller/AddLandSeller'
+
 
 function App() {
   const router = createBrowserRouter([
@@ -20,16 +21,12 @@ function App() {
           element: <Home></Home>,
         },
         {
-          path: 'signin',
-          element: <Signin></Signin>,
-        },
-        {
           path: 'signup',
           element: <Signup></Signup>,
         },
         {
-          path: 'dashboard',
-          element: <BuyerDashboard></BuyerDashboard>,
+          path: 'buyerDashboard',
+          element:<BuyerDashboard></BuyerDashboard>
         },
         {
           path: 'sellerSignUp',
@@ -39,6 +36,10 @@ function App() {
           path: 'sellerDashboard',
           element: <SellerDashboard></SellerDashboard>,
         },
+        {
+          path: 'addlandSeller',
+          element:<AddLandSeller></AddLandSeller>
+        }
       ],
     },
     {
@@ -47,10 +48,11 @@ function App() {
     },
   ])
   return (
-    <div className="App">
-      <RouterProvider router={router}></RouterProvider>
-    </div>
-  )
+      <div className="App">
+        <RouterProvider router={router}></RouterProvider>
+      </div>
+  );
 }
+
 
 export default App

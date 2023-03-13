@@ -1,4 +1,4 @@
-.seller-navbar{
+.buyer-navbar{
     background-color: blueviolet;
     color: rgb(253, 253, 253);
     height: 150px;
@@ -9,15 +9,15 @@
     font-weight: bold;
     margin-bottom: 0;
 }
-.sellers-sidebar{
+.buyers-sidebar{
     width: 20%;
 }
 
-.sellers{
+.buyers{
     display: flex;
     margin-top: 0%;
 }
-.seller-cards{
+.buyer-cards{
     width: 70%;
     height: auto;
     display: flex;

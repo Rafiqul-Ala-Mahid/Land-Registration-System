@@ -1,11 +1,11 @@
-.seller-dashboard {
+.buyer-dashboard {
     display: flex;
     justify-content: space-between;
     margin-right: 0%;
-    gap: 2;
+    gap: 0;
   }
   
-  .seller-card {
+  .buyer-card {
     background-color: #f1f1f1;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -15,7 +15,7 @@
     border: 2px solid rgb(1, 1, 1);
   }
 
-  .seller-dashboard-link{
+  .buyer-dashboard-link{
     width: 33%;
     background-color: rgb(179, 236, 231);
     border: 2px solid gray;
@@ -23,20 +23,20 @@
     border-radius: 3%;
   }
 
-  .seller-dashboard-link h1{
+  .buyer-dashboard-link h1{
     font-size: 1.5rem;
     margin-bottom: 5%;
     font-weight: 600;
   }
 
-  .seller-dashboard-link a{
+  .buyer-dashboard-link a{
     background-color: rgb(122, 6, 239);
     color: white;
     font-size: 1.3rem;
     padding: 2.5%;
   }
 
-  .seller-icon {
+  .buyer-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,21 +44,21 @@
     margin-bottom: 20px;
   }
   
-  .seller-content h2 {
+  .buyer-content h2 {
     margin-top: 0;
     font-size: 1.5rem;
   }
   
-  .seller-content p {
+  .buyer-content p {
     margin-bottom: 0;
     font-size: 2rem;
   }
 
-  .seller-land-info{
+  .buyer-land-info{
     margin-top: 2%;
     text-align: start;
   }
-  .seller-info{
+  .buyer-info{
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -66,30 +66,28 @@
     
   }
 
-  .seller-info-tag{
+  .buyer-info-tag{
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1%;
   }
 
-  .seller-dynamic{
+  .buyer-dynamic{
     margin-right: 0%;
     align-items: center;
     text-align: center;
     padding-right: 0%;
   }
 
-  .seller-request-land{
+  .buyer-request-land{
     padding: 0.5%;
     background-color: rgb(8, 65, 92);
     color: white;
   }
-  .btn{
-    background-color: #000;
-    color: #fff;
-    padding: 3px 15px;
-    border: none;
-    border-radius: 3px;
-    margin-top: .5rem;
+
+  .buyer-disable-land{
+    padding: 0.5%;
+    background-color: rgb(135, 196, 225);
+    color: rgb(28, 22, 22);
   }
   
